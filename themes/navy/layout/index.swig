@@ -11,12 +11,15 @@
     <div class="inner">
       {{ page.content }}
       <ul id="intro-cmd-wrap">
+        <li class="intro-cmd-item">npm install -g hexo-cli</li>
+        <li class="intro-cmd-item">npm install</li>
+        <li class="intro-cmd-item">hexo server</li>
         <li class="intro-cmd-item">目录: ./source/_data/sidebar.yml</li>
         <li class="intro-cmd-item">本地化: ./themes/navy/languages/zh-cn.yml</li>
         <li class="intro-cmd-item">Doc: ./source/zh-cn/xx/</li>
       </ul>
       <div id="intro-get-started-wrap">
-        <a href="docs/" id="intro-get-started-link">{{ __('index.get_started') }}</a>
+        <a href="web/" id="intro-get-started-link">{{ __('index.get_started') }}</a>
       </div>
     </div>
   </div>
