@@ -1,2 +1,5 @@
-docs: docs/
-news: news/
+
+web: /web/
+ios: /ios/
+android: /android/
+news: /news/

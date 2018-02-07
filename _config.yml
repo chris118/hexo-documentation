@@ -1,35 +1,40 @@
 title: putao | 葡萄用户端
 subtitle: "交互规范"
-description: "用户端交互规范: Web、iOS、Android"
-author: 葡萄用户端
+description: "Web、iOS、Android"
+author: Hexo
 language: zh-cn
 timezone: UTC
-url: http://putao.com
+
+url: https://hexo.io
 root: /
 permalink: news/:year/:month/:day/:title/
 archive_dir: news
 code_dir: downloads/code
 new_post_name: :year-:month-:day-:title.md # File name of new posts
 post_asset_folder: true
-highlight:
-  enable: true
-  line_number: false
 per_page: 0
 
 theme: navy
 deploy:
   type: git
-  repo: https://github.com/chris118/hexo-documentation.git
-  branch: gh-pages
+  repo: git@github.com:hexojs/hexojs.github.io.git
 
-disqus_shortname:
-duoshuo_shortname: 
+highlight:
+  enable: true
+  line_number: false
+
+disqus_shortname: 
 google_analytics: 
-baidu_analytics: 
 fb_admins: 
-swiftype_key: 
+algolia:
+  en:
+    api_key: 
+    index_name: 
+  zh-tw:
+    api_key: 
+    index_name: 
+  zh-cn:
+    api_key: 
+    index_name: 
 twitter: 
-github: chris118/hexo-documentation
-gh:
-  user: chris118
-  repo: hexo-documentation
+github: 

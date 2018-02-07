@@ -1,113 +1,115 @@
 'use strict';
 
-var gulp    = require('gulp'),
-    $       = require('gulp-load-plugins')(),
-    cssnano = require('cssnano'),
-    yaml    = require('js-yaml'),
-    fs      = require('fs'),
-    cfg     = yaml.safeLoad(fs.readFileSync('_config.yml')),
-    path    = require('path');
-
-require('shelljs/global');
-
-var htmlMinifierOptions = {
-  removeComments: true,
-  collapseWhitespace: true,
-  collapseBooleanAttributes: true,
-  removeScriptTypeAttributes: true,
-  removeStyleLinkTypeAttributes: true,
-  removeOptionalTags: true,
-  minifyJS: true,
-  minifyCSS: true
-};
+var gulp = require('gulp');
+var gulpIf = require('gulp-if');
+var gulpRev = require('gulp-rev');
+var gulpRevCollector = require('gulp-rev-collector');
+var gulpRevReplace = require('gulp-rev-replace');
+var gulpUglify = require('gulp-uglify');
+var gulpUniqueFiles = require('gulp-unique-files');
+var gulpUseRef = require('gulp-useref');
+var gulpCleanCSS = require('gulp-clean-css');
+var gulpResponsive = require('gulp-responsive');
+var gulpCheerio = require('gulp-cheerio');
+var del = require('del');
+var rename = require('rename');
 
 var dirs = {
   public: 'public',
-  fonts: 'public/fonts',
-  imgs: 'public/img',
-  assetsDir:'public/assets'
+  screenshots: 'public/build/screenshots'
 };
 
-gulp.task('useref', ['hexo'], function(){
+gulp.task('useref', ['screenshot'], function() {
+  var assets = gulpUseRef.assets({
+    searchPath: 'public'
+  });
 
   return gulp.src('public/**/*.html')
-    .pipe($.useref({
-        searchPath:'public',
-        transformPath: function(filePath) {
-            filePath = path.normalize(filePath);
-            return filePath.replace(dirs.public + cfg.root, dirs.public + '/');
-        }
+    .pipe(assets)
+    .pipe(gulpUniqueFiles())
+    .pipe(gulpIf('*.css', gulpCleanCSS()))
+    .pipe(gulpIf('*.js', gulpUglify()))
+    .pipe(gulpRev())
+    .pipe(assets.restore())
+    .pipe(gulpUseRef())
+    .pipe(gulpRevReplace({
+      prefix: '/'
     }))
-    .pipe($.if('*.css', $.postcss([
-      cssnano()
-    ])))
-    .pipe($.if('*.css', $.minifyCss()))
-    .pipe($.if('*.js', $.uglify()))
-    .pipe($.if('*.html', $.htmlMinifier(htmlMinifierOptions)))
     .pipe(gulp.dest('public'));
 });
 
-gulp.task('rev:media', function(){
-
-    return gulp.src([dirs.fonts + '/**/*', dirs.imgs + '/**/*'], {base: dirs.public})
-        .pipe($.rev())
-        .pipe(gulp.dest(dirs.assetsDir))
-        .pipe($.rev.manifest('rev-media.json'))
-        .pipe(gulp.dest(dirs.assetsDir));
-
+gulp.task('screenshot:clean', function() {
+  return del([dirs.screenshots + '/**/*']);
 });
 
-gulp.task('rev:scripts', ['useref', 'rev:media'], function(){
-    var manifest = gulp.src(dirs.assetsDir + '/rev-media.json');
-
-    return gulp.src([dirs.public + '/css/dist*.css', dirs.public + '/js/dist*.js'], {base: dirs.public})
-        .pipe($.rev())
-        .pipe($.revReplace({
-            manifest: manifest
-        }))
-        .pipe(gulp.dest(dirs.assetsDir))
-        .pipe($.rev.manifest())
-        .pipe(gulp.dest(dirs.assetsDir));
-
+gulp.task('screenshot:rev', ['screenshot:clean'], function() {
+  return gulp.src('public/themes/screenshots/*.png')
+    .pipe(gulpRev())
+    .pipe(gulp.dest(dirs.screenshots))
+    .pipe(gulpRev.manifest())
+    .pipe(gulp.dest(dirs.screenshots));
 });
 
-gulp.task('img:min', ['rev:media'], function(){
+gulp.task('screenshot:revreplace', ['screenshot:rev'], function() {
+  var destDir = '/build/screenshots';
 
-    var pngquant = require('imagemin-pngquant');
+  return gulp.src([dirs.screenshots + '/rev-manifest.json', 'public/themes/index.html'])
+    .pipe(gulpRevCollector({
+      replaceReved: true,
+      dirReplacements: {
+        '/themes/screenshots': destDir
+      }
+    }))
+    .pipe(gulpCheerio(function($, file) {
+      $('img.plugin-screenshot-img.lazyload').each(function() {
+        var img = $(this);
+        var src = img.attr('data-src') || img.attr('data-org');
+        if (!src) return;
 
-    return gulp.src(dirs.assetsDir + '/img/**/*', {base: dirs.assetsDir})
-        .pipe($.imagemin({
-            progressive: true,
-            svgoPlugins: [{removeViewBox:false}],
-            use:[pngquant()]
-        }))
-        .pipe(gulp.dest(dirs.assetsDir))
+        var jpgPath = replaceBackSlash(rename(src, {extname: '.jpg'}));
+        var jpg2xPath = replaceBackSlash(rename(jpgPath, {suffix: '@2x'}));
+        var srcset = [
+          jpgPath,
+          jpg2xPath + ' 2x'
+        ].join(', ');
+
+        img.attr('data-src', jpgPath)
+          .attr('data-srcset', srcset)
+          .attr('data-org', src);
+      });
+    }))
+    .pipe(gulp.dest('public/themes'));
 });
 
-gulp.task("rev:replace", ["rev:scripts"], function(){
-    var manifest = gulp.src([dirs.assetsDir + '/rev-*.json']);
-
-    return gulp.src([ dirs.public + "/**/*.html"])
-        .pipe($.revReplace({
-            manifest: manifest,
-            modifyReved:function(fileName){
-                if(fileName.indexOf('/dist') > -1){
-                    //special files proccessed by gulp-useref
-                    fileName = cfg.root + 'assets/' + fileName;
-                }else {
-                    fileName = 'assets/' + fileName; 
-                }
-                return fileName;
-            }
-        }))
-        .pipe(gulp.dest(dirs.public));
+gulp.task('screenshot:resize', ['screenshot:rev'], function() {
+  return gulp.src(dirs.screenshots + '/*.png')
+    .pipe(gulpResponsive({
+      '*.png': [
+        {
+          width: '50%',
+          rename: {
+            extname: '.jpg'
+          }
+        },
+        {
+          rename: {
+            suffix: '@2x',
+            extname: '.jpg'
+          }
+        }
+      ]
+    }, {
+      progressive: true,
+      format: 'jpeg',
+      quality: 70,
+      stats: false
+    }))
+    .pipe(gulp.dest(dirs.screenshots));
 });
 
-gulp.task('hexo', function(){
-   
-   exec('hexo g');
+gulp.task('screenshot', ['screenshot:rev', 'screenshot:resize', 'screenshot:revreplace']);
+gulp.task('default', ['useref', 'screenshot']);
 
-});
-
-gulp.task('img', ['img:min']);
-gulp.task('default', ['rev:replace', 'img']);
+function replaceBackSlash(str) {
+  return str.replace(/\\/g, '/');
+}

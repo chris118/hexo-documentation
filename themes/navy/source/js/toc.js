@@ -1,45 +1,31 @@
-(function(){
+(function() {
   'use strict';
 
-  	var toc = document.getElementById('article-toc');
-  	var tocTop = document.getElementById('article-toc-top');
+  var header = document.getElementById('header');
+  var toc = document.getElementById('article-toc');
+  var tocTop = document.getElementById('article-toc-top');
+  var headerHeight = header.clientHeight;
 
-  	if (!toc) return;
+  if (!toc) return;
 
-  	tocTop.addEventListener('click', function(e){
-    	e.preventDefault();
-    	document.body.scrollTop = 0;
-  	});
+  function updateSidebarPosition() {
+    var scrollTop = document.scrollingElement.scrollTop;
 
-	$(function(){
+    if (scrollTop > headerHeight) {
+      toc.classList.add('fixed');
+    } else {
+      toc.classList.remove('fixed');
+    }
+  }
 
-		// Scrollspy
-        var $window = $(window);
-        var $body   = $(document.body);
+  window.addEventListener('scroll', function() {
+    window.requestAnimationFrame(updateSidebarPosition);
+  });
 
-        $body.scrollspy({
-          target: '#article-toc-inner'
-        });
-        $window.on('load', function () {
-          $body.scrollspy('refresh');
-        });
+  updateSidebarPosition();
 
-        // Sidenav affixing
-        setTimeout(function () {
-
-          var $sidebar = $('#article-toc-inner'),
-              sideBarOffsetTop = $sidebar.offset().top;
-
-          $sidebar.affix({
-            offset: {
-              top:sideBarOffsetTop, 
-              bottom: function () {
-                return (this.bottom = $('#footer').outerHeight(true));
-              }
-            }
-          })
-        }, 100);
-
-	});
-
-})();
+  tocTop.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.scrollingElement.scrollTop = 0;
+  });
+}());
