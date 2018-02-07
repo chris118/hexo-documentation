@@ -25,9 +25,9 @@ sidebar:
     basic_usage: 基本操作
     writing: 写作
   ios:
-    overview: 概述
-    getting_started: 开始使用
-    basic_usage: 基本操作
+    ui_guide: 交互规范
+    code_guide: 编码规范
+    button: 按钮
     writing: 写作
   android:
     overview: 概述

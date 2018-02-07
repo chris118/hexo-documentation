@@ -13,6 +13,7 @@
   "dependencies": {
     "cheerio": "^0.20.0",
     "hexo": "github:hexojs/hexo",
+    "hexo-asset-image": "0.0.3",
     "hexo-deployer-git": "^0.3.1",
     "hexo-generator-archive": "^0.1.4",
     "hexo-generator-feed": "^1.1.0",

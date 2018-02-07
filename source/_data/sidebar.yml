@@ -4,9 +4,9 @@ web:
   basic_usage:
     writing: writing.html
 ios:
-  getting_started:
-    overview: index.html
-  basic_usage:
+  ui_guide:
+    button: index.html
+  code_guide:
     writing: writing.html
 android:
   getting_started:
