@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Java Style Guide | putao | 葡萄用户端</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://pomelo.tech/zh-cn/android/java-guide.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="http://pomelo.tech/android/java-guide.html">
+    
+      <link rel="alternative" hreflang="zh-tw" href="http://pomelo.tech/zh-tw/android/java-guide.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="http://pomelo.tech/zh-cn/android/java-guide.html">
+    
+      <link rel="alternative" hreflang="ru" href="http://pomelo.tech/ru/android/java-guide.html">
+    
+      <link rel="alternative" hreflang="ko" href="http://pomelo.tech/ko/android/java-guide.html">
+    
+      <link rel="alternative" hreflang="pt-br" href="http://pomelo.tech/pt-br/android/java-guide.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <meta name="generator" content="Hexo 3.5.0">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="putao | 葡萄用户端">
+  <!-- Open Graph -->
+  <meta name="description" content="1. Project guidelines1.1 Project structureNew projects should follow the Android Gradle project structure that is defined on the Android Gradle plugin user guide. The ribot Boilerplate project is a go">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Java Style Guide">
+<meta property="og:url" content="http://pomelo.tech/zh-cn/android/java-guide.html">
+<meta property="og:site_name" content="putao | 葡萄用户端">
+<meta property="og:description" content="1. Project guidelines1.1 Project structureNew projects should follow the Android Gradle project structure that is defined on the Android Gradle plugin user guide. The ribot Boilerplate project is a go">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2018-02-08T06:56:49.511Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java Style Guide">
+<meta name="twitter:description" content="1. Project guidelines1.1 Project structureNew projects should follow the Android Gradle project structure that is defined on the Android Gradle plugin user guide. The ribot Boilerplate project is a go">
+  <!-- Google Analytics -->
+  
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/zh-cn/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/zh-cn/ios/" class="main-nav-link">iOS</a><a href="/zh-cn/android/" class="main-nav-link">Android</a><a href="/zh-cn/web/" class="main-nav-link">Web前端</a>
+<!--       <a href="https://github.com/" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div> -->
+    </nav>
+<!--     <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="android/java-guide.html">
+        
+          <option value="en">English</option>
+        
+          <option value="zh-tw">正體中文</option>
+        
+          <option value="zh-cn" selected>简体中文</option>
+        
+          <option value="ru">Русский</option>
+        
+          <option value="ko">한국어</option>
+        
+          <option value="pt-br">Português (Brasil)</option>
+        
+      </select>
+    </div> -->
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Java Style Guide</h1>
+                <a href="https://github.com/hexojs/site/edit/master/source/zh-cn/android/java-guide.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h1 id="1-Project-guidelines" class="article-heading"><a href="#1-Project-guidelines" class="headerlink" title="1. Project guidelines"></a>1. Project guidelines<a class="article-anchor" href="#1-Project-guidelines" aria-hidden="true"></a></h1><h2 id="1-1-Project-structure" class="article-heading"><a href="#1-1-Project-structure" class="headerlink" title="1.1 Project structure"></a>1.1 Project structure<a class="article-anchor" href="#1-1-Project-structure" aria-hidden="true"></a></h2><p>New projects should follow the Android Gradle project structure that is defined on the <a href="http://tools.android.com/tech-docs/new-build-system/user-guide#TOC-Project-Structure" target="_blank" rel="noopener">Android Gradle plugin user guide</a>. The <a href="https://github.com/ribot/android-boilerplate" target="_blank" rel="noopener">ribot Boilerplate</a> project is a good reference to start from.</p>
+<h2 id="1-2-File-naming" class="article-heading"><a href="#1-2-File-naming" class="headerlink" title="1.2 File naming"></a>1.2 File naming<a class="article-anchor" href="#1-2-File-naming" aria-hidden="true"></a></h2><h3 id="1-2-1-Class-files" class="article-heading"><a href="#1-2-1-Class-files" class="headerlink" title="1.2.1 Class files"></a>1.2.1 Class files<a class="article-anchor" href="#1-2-1-Class-files" aria-hidden="true"></a></h3><p>Class names are written in <a href="http://en.wikipedia.org/wiki/CamelCase" target="_blank" rel="noopener">UpperCamelCase</a>.</p>
+<p>For classes that extend an Android component, the name of the class should end with the name of the component; for example: <code>SignInActivity</code>, <code>SignInFragment</code>, <code>ImageUploaderService</code>, <code>ChangePasswordDialog</code>.</p>
+<h3 id="1-2-2-Resources-files" class="article-heading"><a href="#1-2-2-Resources-files" class="headerlink" title="1.2.2 Resources files"></a>1.2.2 Resources files<a class="article-anchor" href="#1-2-2-Resources-files" aria-hidden="true"></a></h3><p>Resources file names are written in <strong>lowercase_underscore</strong>.</p>
+<h4 id="1-2-2-1-Drawable-files" class="article-heading"><a href="#1-2-2-1-Drawable-files" class="headerlink" title="1.2.2.1 Drawable files"></a>1.2.2.1 Drawable files<a class="article-anchor" href="#1-2-2-1-Drawable-files" aria-hidden="true"></a></h4><p>Naming conventions for drawables:</p>
+<table>
+<thead>
+<tr>
+<th>Asset Type</th>
+<th>Prefix</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Action bar</td>
+<td><code>ab_</code></td>
+<td><code>ab_stacked.9.png</code></td>
+</tr>
+<tr>
+<td>Button</td>
+<td><code>btn_</code></td>
+<td><code>btn_send_pressed.9.png</code></td>
+</tr>
+<tr>
+<td>Dialog</td>
+<td><code>dialog_</code></td>
+<td><code>dialog_top.9.png</code></td>
+</tr>
+<tr>
+<td>Divider</td>
+<td><code>divider_</code></td>
+<td><code>divider_horizontal.9.png</code></td>
+</tr>
+<tr>
+<td>Icon</td>
+<td><code>ic_</code></td>
+<td><code>ic_star.png</code></td>
+</tr>
+<tr>
+<td>Menu</td>
+<td><code>menu_</code></td>
+<td><code>menu_submenu_bg.9.png</code></td>
+</tr>
+<tr>
+<td>Notification</td>
+<td><code>notification_</code></td>
+<td><code>notification_bg.9.png</code></td>
+</tr>
+<tr>
+<td>Tabs</td>
+<td><code>tab_</code></td>
+<td><code>tab_pressed.9.png</code></td>
+</tr>
+</tbody>
+</table>
+<p>Naming conventions for icons (taken from <a href="http://developer.android.com/design/style/iconography.html" target="_blank" rel="noopener">Android iconography guidelines</a>):</p>
+<table>
+<thead>
+<tr>
+<th>Asset Type</th>
+<th>Prefix</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Icons</td>
+<td><code>ic_</code></td>
+<td><code>ic_star.png</code></td>
+</tr>
+<tr>
+<td>Launcher icons</td>
+<td><code>ic_launcher</code></td>
+<td><code>ic_launcher_calendar.png</code></td>
+</tr>
+<tr>
+<td>Menu icons and Action Bar icons</td>
+<td><code>ic_menu</code></td>
+<td><code>ic_menu_archive.png</code></td>
+</tr>
+<tr>
+<td>Status bar icons</td>
+<td><code>ic_stat_notify</code></td>
+<td><code>ic_stat_notify_msg.png</code></td>
+</tr>
+<tr>
+<td>Tab icons</td>
+<td><code>ic_tab</code></td>
+<td><code>ic_tab_recent.png</code></td>
+</tr>
+<tr>
+<td>Dialog icons</td>
+<td><code>ic_dialog</code></td>
+<td><code>ic_dialog_info.png</code></td>
+</tr>
+</tbody>
+</table>
+<p>Naming conventions for selector states:</p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Suffix</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Normal</td>
+<td><code>_normal</code></td>
+<td><code>btn_order_normal.9.png</code></td>
+</tr>
+<tr>
+<td>Pressed</td>
+<td><code>_pressed</code></td>
+<td><code>btn_order_pressed.9.png</code></td>
+</tr>
+<tr>
+<td>Focused</td>
+<td><code>_focused</code></td>
+<td><code>btn_order_focused.9.png</code></td>
+</tr>
+<tr>
+<td>Disabled</td>
+<td><code>_disabled</code></td>
+<td><code>btn_order_disabled.9.png</code></td>
+</tr>
+<tr>
+<td>Selected</td>
+<td><code>_selected</code></td>
+<td><code>btn_order_selected.9.png</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="1-2-2-2-Layout-files" class="article-heading"><a href="#1-2-2-2-Layout-files" class="headerlink" title="1.2.2.2 Layout files"></a>1.2.2.2 Layout files<a class="article-anchor" href="#1-2-2-2-Layout-files" aria-hidden="true"></a></h4><p>Layout files should match the name of the Android components that they are intended for but moving the top level component name to the beginning. For example, if we are creating a layout for the <code>SignInActivity</code>, the name of the layout file should be <code>activity_sign_in.xml</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Class Name</th>
+<th>Layout Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Activity</td>
+<td><code>UserProfileActivity</code></td>
+<td><code>activity_user_profile.xml</code></td>
+</tr>
+<tr>
+<td>Fragment</td>
+<td><code>SignUpFragment</code></td>
+<td><code>fragment_sign_up.xml</code></td>
+</tr>
+<tr>
+<td>Dialog</td>
+<td><code>ChangePasswordDialog</code></td>
+<td><code>dialog_change_password.xml</code></td>
+</tr>
+<tr>
+<td>AdapterView item</td>
+<td>—</td>
+<td><code>item_person.xml</code></td>
+</tr>
+<tr>
+<td>Partial layout</td>
+<td>—</td>
+<td><code>partial_stats_bar.xml</code></td>
+</tr>
+</tbody>
+</table>
+<p>A slightly different case is when we are creating a layout that is going to be inflated by an <code>Adapter</code>, e.g to populate a <code>ListView</code>. In this case, the name of the layout should start with <code>item_</code>.</p>
+<p>Note that there are cases where these rules will not be possible to apply. For example, when creating layout files that are intended to be part of other layouts. In this case you should use the prefix <code>partial_</code>.</p>
+<h4 id="1-2-2-3-Menu-files" class="article-heading"><a href="#1-2-2-3-Menu-files" class="headerlink" title="1.2.2.3 Menu files"></a>1.2.2.3 Menu files<a class="article-anchor" href="#1-2-2-3-Menu-files" aria-hidden="true"></a></h4><p>Similar to layout files, menu files should match the name of the component. For example, if we are defining a menu file that is going to be used in the <code>UserActivity</code>, then the name of the file should be <code>activity_user.xml</code></p>
+<p>A good practice is to not include the word <code>menu</code> as part of the name because these files are already located in the <code>menu</code> directory.</p>
+<h4 id="1-2-2-4-Values-files" class="article-heading"><a href="#1-2-2-4-Values-files" class="headerlink" title="1.2.2.4 Values files"></a>1.2.2.4 Values files<a class="article-anchor" href="#1-2-2-4-Values-files" aria-hidden="true"></a></h4><p>Resource files in the values folder should be <strong>plural</strong>, e.g. <code>strings.xml</code>, <code>styles.xml</code>, <code>colors.xml</code>, <code>dimens.xml</code>, <code>attrs.xml</code></p>
+<h1 id="2-Code-guidelines" class="article-heading"><a href="#2-Code-guidelines" class="headerlink" title="2 Code guidelines"></a>2 Code guidelines<a class="article-anchor" href="#2-Code-guidelines" aria-hidden="true"></a></h1><h2 id="2-1-Java-language-rules" class="article-heading"><a href="#2-1-Java-language-rules" class="headerlink" title="2.1 Java language rules"></a>2.1 Java language rules<a class="article-anchor" href="#2-1-Java-language-rules" aria-hidden="true"></a></h2><h3 id="2-1-1-Don’t-ignore-exceptions" class="article-heading"><a href="#2-1-1-Don’t-ignore-exceptions" class="headerlink" title="2.1.1 Don’t ignore exceptions"></a>2.1.1 Don’t ignore exceptions<a class="article-anchor" href="#2-1-1-Don’t-ignore-exceptions" aria-hidden="true"></a></h3><p>You must never do the following:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setServerPort</span><span class="params">(String value)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        serverPort = Integer.parseInt(value);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (NumberFormatException e) &#123; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em>While you may think that your code will never encounter this error condition or that it is not important to handle it, ignoring exceptions like above creates mines in your code for someone else to trip over some day. You must handle every Exception in your code in some principled way. The specific handling varies depending on the case.</em> - (<a href="https://source.android.com/source/code-style.html" target="_blank" rel="noopener">Android code style guidelines</a>)</p>
+<p>See alternatives <a href="https://source.android.com/source/code-style.html#dont-ignore-exceptions" target="_blank" rel="noopener">here</a>.</p>
+<h3 id="2-1-2-Don’t-catch-generic-exception" class="article-heading"><a href="#2-1-2-Don’t-catch-generic-exception" class="headerlink" title="2.1.2 Don’t catch generic exception"></a>2.1.2 Don’t catch generic exception<a class="article-anchor" href="#2-1-2-Don’t-catch-generic-exception" aria-hidden="true"></a></h3><p>You should not do this:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    someComplicatedIOFunction();        <span class="comment">// may throw IOException</span></span><br><span class="line">    someComplicatedParsingFunction();   <span class="comment">// may throw ParsingException</span></span><br><span class="line">    someComplicatedSecurityFunction();  <span class="comment">// may throw SecurityException</span></span><br><span class="line">    <span class="comment">// phew, made it all the way</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (Exception e) &#123;                 <span class="comment">// I'll just catch all exceptions</span></span><br><span class="line">    handleError();                      <span class="comment">// with one generic handler!</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>See the reason why and some alternatives <a href="https://source.android.com/source/code-style.html#dont-catch-generic-exception" target="_blank" rel="noopener">here</a></p>
+<h3 id="2-1-3-Don’t-use-finalizers" class="article-heading"><a href="#2-1-3-Don’t-use-finalizers" class="headerlink" title="2.1.3 Don’t use finalizers"></a>2.1.3 Don’t use finalizers<a class="article-anchor" href="#2-1-3-Don’t-use-finalizers" aria-hidden="true"></a></h3><p><em>We don’t use finalizers. There are no guarantees as to when a finalizer will be called, or even that it will be called at all. In most cases, you can do what you need from a finalizer with good exception handling. If you absolutely need it, define a <code>close()</code> method (or the like) and document exactly when that method needs to be called. See <code>InputStream</code> for an example. In this case it is appropriate but not required to print a short log message from the finalizer, as long as it is not expected to flood the logs.</em> - (<a href="https://source.android.com/source/code-style.html#dont-use-finalizers" target="_blank" rel="noopener">Android code style guidelines</a>)</p>
+<h3 id="2-1-4-Fully-qualify-imports" class="article-heading"><a href="#2-1-4-Fully-qualify-imports" class="headerlink" title="2.1.4 Fully qualify imports"></a>2.1.4 Fully qualify imports<a class="article-anchor" href="#2-1-4-Fully-qualify-imports" aria-hidden="true"></a></h3><p>This is bad: <code>import foo.*;</code></p>
+<p>This is good: <code>import foo.Bar;</code></p>
+<p>See more info <a href="https://source.android.com/source/code-style.html#fully-qualify-imports" target="_blank" rel="noopener">here</a></p>
+<h2 id="2-2-Java-style-rules" class="article-heading"><a href="#2-2-Java-style-rules" class="headerlink" title="2.2 Java style rules"></a>2.2 Java style rules<a class="article-anchor" href="#2-2-Java-style-rules" aria-hidden="true"></a></h2><h3 id="2-2-1-Fields-definition-and-naming" class="article-heading"><a href="#2-2-1-Fields-definition-and-naming" class="headerlink" title="2.2.1 Fields definition and naming"></a>2.2.1 Fields definition and naming<a class="article-anchor" href="#2-2-1-Fields-definition-and-naming" aria-hidden="true"></a></h3><p>Fields should be defined at the <strong>top of the file</strong> and they should follow the naming rules listed below.</p>
+<ul>
+<li>Private, non-static field names start with <strong>m</strong>.</li>
+<li>Private, static field names start with <strong>s</strong>.</li>
+<li>Other fields start with a lower case letter.</li>
+<li>Static final fields (constants) are ALL_CAPS_WITH_UNDERSCORES.</li>
+</ul>
+<p>Example:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> SOME_CONSTANT = <span class="number">42</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> publicField;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> MyClass sSingleton;</span><br><span class="line">    <span class="keyword">int</span> mPackagePrivate;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> mPrivate;</span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">int</span> mProtected;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-3-Treat-acronyms-as-words" class="article-heading"><a href="#2-2-3-Treat-acronyms-as-words" class="headerlink" title="2.2.3 Treat acronyms as words"></a>2.2.3 Treat acronyms as words<a class="article-anchor" href="#2-2-3-Treat-acronyms-as-words" aria-hidden="true"></a></h3><table>
+<thead>
+<tr>
+<th>Good</th>
+<th>Bad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>XmlHttpRequest</code></td>
+<td><code>XMLHTTPRequest</code></td>
+</tr>
+<tr>
+<td><code>getCustomerId</code></td>
+<td><code>getCustomerID</code></td>
+</tr>
+<tr>
+<td><code>String url</code></td>
+<td><code>String URL</code></td>
+</tr>
+<tr>
+<td><code>long id</code></td>
+<td><code>long ID</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-2-4-Use-spaces-for-indentation" class="article-heading"><a href="#2-2-4-Use-spaces-for-indentation" class="headerlink" title="2.2.4 Use spaces for indentation"></a>2.2.4 Use spaces for indentation<a class="article-anchor" href="#2-2-4-Use-spaces-for-indentation" aria-hidden="true"></a></h3><p>Use <strong>4 space</strong> indents for blocks:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (x == <span class="number">1</span>) &#123;</span><br><span class="line">    x++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Use <strong>8 space</strong> indents for line wraps:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Instrument i =</span><br><span class="line">        someLongExpression(that, wouldNotFit, on, one, line);</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-5-Use-standard-brace-style" class="article-heading"><a href="#2-2-5-Use-standard-brace-style" class="headerlink" title="2.2.5 Use standard brace style"></a>2.2.5 Use standard brace style<a class="article-anchor" href="#2-2-5-Use-standard-brace-style" aria-hidden="true"></a></h3><p>Braces go on the same line as the code before them.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">func</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (something) &#123;</span><br><span class="line">            <span class="comment">// ...</span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (somethingElse) &#123;</span><br><span class="line">            <span class="comment">// ...</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// ...</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Braces around the statements are required unless the condition and the body fit on one line.</p>
+<p>If the condition and the body fit on one line and that line is shorter than the max line length, then braces are not required, e.g.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (condition) body();</span><br></pre></td></tr></table></figure>
+<p>This is <strong>bad</strong>:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (condition)</span><br><span class="line">    body();  <span class="comment">// bad!</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-2-6-Annotations" class="article-heading"><a href="#2-2-6-Annotations" class="headerlink" title="2.2.6 Annotations"></a>2.2.6 Annotations<a class="article-anchor" href="#2-2-6-Annotations" aria-hidden="true"></a></h3><h4 id="2-2-6-1-Annotations-practices" class="article-heading"><a href="#2-2-6-1-Annotations-practices" class="headerlink" title="2.2.6.1 Annotations practices"></a>2.2.6.1 Annotations practices<a class="article-anchor" href="#2-2-6-1-Annotations-practices" aria-hidden="true"></a></h4><p>According to the Android code style guide, the standard practices for some of the predefined annotations in Java are:</p>
+<ul>
+<li><p><code>@Override</code>: The @Override annotation <strong>must be used</strong> whenever a method overrides the declaration or implementation from a super-class. For example, if you use the @inheritdocs Javadoc tag, and derive from a class (not an interface), you must also annotate that the method @Overrides the parent class’s method.</p>
+</li>
+<li><p><code>@SuppressWarnings</code>: The @SuppressWarnings annotation should only be used under circumstances where it is impossible to eliminate a warning. If a warning passes this “impossible to eliminate” test, the @SuppressWarnings annotation must be used, so as to ensure that all warnings reflect actual problems in the code.</p>
+</li>
+</ul>
+<p>More information about annotation guidelines can be found <a href="http://source.android.com/source/code-style.html#use-standard-java-annotations" target="_blank" rel="noopener">here</a>.</p>
+<h4 id="2-2-6-2-Annotations-style" class="article-heading"><a href="#2-2-6-2-Annotations-style" class="headerlink" title="2.2.6.2 Annotations style"></a>2.2.6.2 Annotations style<a class="article-anchor" href="#2-2-6-2-Annotations-style" aria-hidden="true"></a></h4><p><strong>Classes, Methods and Constructors</strong></p>
+<p>When annotations are applied to a class, method, or constructor, they are listed after the documentation block and should appear as <strong>one annotation per line</strong> .</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* This is the documentation block about the class */</span></span><br><span class="line"><span class="meta">@AnnotationA</span></span><br><span class="line"><span class="meta">@AnnotationB</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyAnnotatedClass</span> </span>&#123; &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Fields</strong></p>
+<p>Annotations applying to fields should be listed <strong>on the same line</strong>, unless the line reaches the maximum line length.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Nullable</span> <span class="meta">@Mock</span> DataManager mDataManager;</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-7-Limit-variable-scope" class="article-heading"><a href="#2-2-7-Limit-variable-scope" class="headerlink" title="2.2.7 Limit variable scope"></a>2.2.7 Limit variable scope<a class="article-anchor" href="#2-2-7-Limit-variable-scope" aria-hidden="true"></a></h3><p><em>The scope of local variables should be kept to a minimum (Effective Java Item 29). By doing so, you increase the readability and maintainability of your code and reduce the likelihood of error. Each variable should be declared in the innermost block that encloses all uses of the variable.</em></p>
+<p><em>Local variables should be declared at the point they are first used. Nearly every local variable declaration should contain an initializer. If you don’t yet have enough information to initialize a variable sensibly, you should postpone the declaration until you do.</em> - (<a href="https://source.android.com/source/code-style.html#limit-variable-scope" target="_blank" rel="noopener">Android code style guidelines</a>)</p>
+<h3 id="2-2-8-Order-import-statements" class="article-heading"><a href="#2-2-8-Order-import-statements" class="headerlink" title="2.2.8 Order import statements"></a>2.2.8 Order import statements<a class="article-anchor" href="#2-2-8-Order-import-statements" aria-hidden="true"></a></h3><p>If you are using an IDE such as Android Studio, you don’t have to worry about this because your IDE is already obeying these rules. If not, have a look below.</p>
+<p>The ordering of import statements is:</p>
+<ol>
+<li>Android imports</li>
+<li>Imports from third parties (com, junit, net, org)</li>
+<li>java and javax</li>
+<li>Same project imports</li>
+</ol>
+<p>To exactly match the IDE settings, the imports should be:</p>
+<ul>
+<li>Alphabetically ordered within each grouping, with capital letters before lower case letters (e.g. Z before a).</li>
+<li>There should be a blank line between each major grouping (android, com, junit, net, org, java, javax).</li>
+</ul>
+<p>More info <a href="https://source.android.com/source/code-style.html#limit-variable-scope" target="_blank" rel="noopener">here</a></p>
+<h3 id="2-2-9-Logging-guidelines" class="article-heading"><a href="#2-2-9-Logging-guidelines" class="headerlink" title="2.2.9 Logging guidelines"></a>2.2.9 Logging guidelines<a class="article-anchor" href="#2-2-9-Logging-guidelines" aria-hidden="true"></a></h3><p>Use the logging methods provided by the <code>Log</code> class to print out error messages or other information that may be useful for developers to identify issues:</p>
+<ul>
+<li><code>Log.v(String tag, String msg)</code> (verbose)</li>
+<li><code>Log.d(String tag, String msg)</code> (debug)</li>
+<li><code>Log.i(String tag, String msg)</code> (information)</li>
+<li><code>Log.w(String tag, String msg)</code> (warning)</li>
+<li><code>Log.e(String tag, String msg)</code> (error)</li>
+</ul>
+<p>As a general rule, we use the class name as tag and we define it as a <code>static final</code> field at the top of the file. For example:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String TAG = MyClass.class.getSimpleName();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">myMethod</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Log.e(TAG, <span class="string">"My error message"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>VERBOSE and DEBUG logs <strong>must</strong> be disabled on release builds. It is also recommended to disable INFORMATION, WARNING and ERROR logs but you may want to keep them enabled if you think they may be useful to identify issues on release builds. If you decide to leave them enabled, you have to make sure that they are not leaking private information such as email addresses, user ids, etc.</p>
+<p>To only show logs on debug builds:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (BuildConfig.DEBUG) Log.d(TAG, <span class="string">"The value of x is "</span> + x);</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-10-Class-member-ordering" class="article-heading"><a href="#2-2-10-Class-member-ordering" class="headerlink" title="2.2.10 Class member ordering"></a>2.2.10 Class member ordering<a class="article-anchor" href="#2-2-10-Class-member-ordering" aria-hidden="true"></a></h3><p>There is no single correct solution for this but using a <strong>logical</strong> and <strong>consistent</strong> order will improve code learnability and readability. It is recommendable to use the following order:</p>
+<ol>
+<li>Constants</li>
+<li>Fields</li>
+<li>Constructors</li>
+<li>Override methods and callbacks (public or private)</li>
+<li>Public methods</li>
+<li>Private methods</li>
+<li>Inner classes or interfaces</li>
+</ol>
+<p>Example:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String TAG = MainActivity.class.getSimpleName();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String mTitle;</span><br><span class="line">    <span class="keyword">private</span> TextView mTextViewTitle;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTitle</span><span class="params">(String title)</span> </span>&#123;</span><br><span class="line">    	mTitle = title;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setUpView</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">AnInnerClass</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>If your class is extending an <strong>Android component</strong> such as an Activity or a Fragment, it is a good practice to order the override methods so that they <strong>match the component’s lifecycle</strong>. For example, if you have an Activity that implements <code>onCreate()</code>, <code>onDestroy()</code>, <code>onPause()</code> and <code>onResume()</code>, then the correct order is:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//Order matches Activity lifecycle</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onResume</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPause</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-11-Parameter-ordering-in-methods" class="article-heading"><a href="#2-2-11-Parameter-ordering-in-methods" class="headerlink" title="2.2.11 Parameter ordering in methods"></a>2.2.11 Parameter ordering in methods<a class="article-anchor" href="#2-2-11-Parameter-ordering-in-methods" aria-hidden="true"></a></h3><p>When programming for Android, it is quite common to define methods that take a <code>Context</code>. If you are writing a method like this, then the <strong>Context</strong> must be the <strong>first</strong> parameter.</p>
+<p>The opposite case are <strong>callback</strong> interfaces that should always be the <strong>last</strong> parameter.</p>
+<p>Examples:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Context always goes first</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> User <span class="title">loadUser</span><span class="params">(Context context, <span class="keyword">int</span> userId)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Callbacks always go last</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">loadUserAsync</span><span class="params">(Context context, <span class="keyword">int</span> userId, UserCallback callback)</span></span>;</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-13-String-constants-naming-and-values" class="article-heading"><a href="#2-2-13-String-constants-naming-and-values" class="headerlink" title="2.2.13 String constants, naming, and values"></a>2.2.13 String constants, naming, and values<a class="article-anchor" href="#2-2-13-String-constants-naming-and-values" aria-hidden="true"></a></h3><p>Many elements of the Android SDK such as <code>SharedPreferences</code>, <code>Bundle</code>, or <code>Intent</code> use a key-value pair approach so it’s very likely that even for a small app you end up having to write a lot of String constants.</p>
+<p>When using one of these components, you <strong>must</strong> define the keys as a <code>static final</code> fields and they should be prefixed as indicated below.</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Field Name Prefix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SharedPreferences</td>
+<td><code>PREF_</code></td>
+</tr>
+<tr>
+<td>Bundle</td>
+<td><code>BUNDLE_</code></td>
+</tr>
+<tr>
+<td>Fragment Arguments</td>
+<td><code>ARGUMENT_</code></td>
+</tr>
+<tr>
+<td>Intent Extra</td>
+<td><code>EXTRA_</code></td>
+</tr>
+<tr>
+<td>Intent Action</td>
+<td><code>ACTION_</code></td>
+</tr>
+</tbody>
+</table>
+<p>Note that the arguments of a Fragment - <code>Fragment.getArguments()</code> - are also a Bundle. However, because this is a quite common use of Bundles, we define a different prefix for them.</p>
+<p>Example:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Note the value of the field is the same as the name to avoid duplication issues</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> String PREF_EMAIL = <span class="string">"PREF_EMAIL"</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> String BUNDLE_AGE = <span class="string">"BUNDLE_AGE"</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> String ARGUMENT_USER_ID = <span class="string">"ARGUMENT_USER_ID"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Intent-related items use full package name as value</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> String EXTRA_SURNAME = <span class="string">"com.myapp.extras.EXTRA_SURNAME"</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> String ACTION_OPEN_USER = <span class="string">"com.myapp.action.ACTION_OPEN_USER"</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-14-Arguments-in-Fragments-and-Activities" class="article-heading"><a href="#2-2-14-Arguments-in-Fragments-and-Activities" class="headerlink" title="2.2.14 Arguments in Fragments and Activities"></a>2.2.14 Arguments in Fragments and Activities<a class="article-anchor" href="#2-2-14-Arguments-in-Fragments-and-Activities" aria-hidden="true"></a></h3><p>When data is passed into an <code>Activity</code> or <code>Fragment</code> via an <code>Intent</code> or a <code>Bundle</code>, the keys for the different values <strong>must</strong> follow the rules described in the section above.</p>
+<p>When an <code>Activity</code> or <code>Fragment</code> expects arguments, it should provide a <code>public static</code> method that facilitates the creation of the relevant <code>Intent</code> or <code>Fragment</code>.</p>
+<p>In the case of Activities the method is usually called <code>getStartIntent()</code>:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Intent <span class="title">getStartIntent</span><span class="params">(Context context, User user)</span> </span>&#123;</span><br><span class="line">	Intent intent = <span class="keyword">new</span> Intent(context, ThisActivity.class);</span><br><span class="line">	intent.putParcelableExtra(EXTRA_USER, user);</span><br><span class="line">	<span class="keyword">return</span> intent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>For Fragments it is named <code>newInstance()</code> and handles the creation of the Fragment with the right arguments:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> UserFragment <span class="title">newInstance</span><span class="params">(User user)</span> </span>&#123;</span><br><span class="line">	UserFragment fragment = <span class="keyword">new</span> UserFragment();</span><br><span class="line">	Bundle args = <span class="keyword">new</span> Bundle();</span><br><span class="line">	args.putParcelable(ARGUMENT_USER, user);</span><br><span class="line">	fragment.setArguments(args)</span><br><span class="line">	<span class="keyword">return</span> fragment;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Note 1</strong>: These methods should go at the top of the class before <code>onCreate()</code>.</p>
+<p><strong>Note 2</strong>: If we provide the methods described above, the keys for extras and arguments should be <code>private</code> because there is not need for them to be exposed outside the class.</p>
+<h3 id="2-2-15-Line-length-limit" class="article-heading"><a href="#2-2-15-Line-length-limit" class="headerlink" title="2.2.15 Line length limit"></a>2.2.15 Line length limit<a class="article-anchor" href="#2-2-15-Line-length-limit" aria-hidden="true"></a></h3><p>Code lines should not exceed <strong>100 characters</strong>. If the line is longer than this limit there are usually two options to reduce its length:</p>
+<ul>
+<li>Extract a local variable or method (preferable).</li>
+<li>Apply line-wrapping to divide a single line into multiple ones.</li>
+</ul>
+<p>There are two <strong>exceptions</strong> where it is possible to have lines longer than 100:</p>
+<ul>
+<li>Lines that are not possible to split, e.g. long URLs in comments.</li>
+<li><code>package</code> and <code>import</code> statements.</li>
+</ul>
+<h4 id="2-2-15-1-Line-wrapping-strategies" class="article-heading"><a href="#2-2-15-1-Line-wrapping-strategies" class="headerlink" title="2.2.15.1 Line-wrapping strategies"></a>2.2.15.1 Line-wrapping strategies<a class="article-anchor" href="#2-2-15-1-Line-wrapping-strategies" aria-hidden="true"></a></h4><p>There isn’t an exact formula that explains how to line-wrap and quite often different solutions are valid. However there are a few rules that can be applied to common cases.</p>
+<p><strong>Break at operators</strong></p>
+<p>When the line is broken at an operator, the break comes <strong>before</strong> the operator. For example:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> longName = anotherVeryLongVariable + anEvenLongerOne - thisRidiculousLongOne</span><br><span class="line">        + theFinalOne;</span><br></pre></td></tr></table></figure>
+<p><strong>Assignment Operator Exception</strong></p>
+<p>An exception to the <code>break at operators</code> rule is the assignment operator <code>=</code>, where the line break should happen <strong>after</strong> the operator.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> longName =</span><br><span class="line">        anotherVeryLongVariable + anEvenLongerOne - thisRidiculousLongOne + theFinalOne;</span><br></pre></td></tr></table></figure>
+<p><strong>Method chain case</strong></p>
+<p>When multiple methods are chained in the same line - for example when using Builders - every call to a method should go in its own line, breaking the line before the <code>.</code></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Picasso.with(context).load(<span class="string">"http://ribot.co.uk/images/sexyjoe.jpg"</span>).into(imageView);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Picasso.with(context)</span><br><span class="line">        .load(<span class="string">"http://ribot.co.uk/images/sexyjoe.jpg"</span>)</span><br><span class="line">        .into(imageView);</span><br></pre></td></tr></table></figure>
+<p><strong>Long parameters case</strong></p>
+<p>When a method has many parameters or its parameters are very long, we should break the line after every comma <code>,</code></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">loadPicture(context, <span class="string">"http://ribot.co.uk/images/sexyjoe.jpg"</span>, mImageViewProfilePicture, clickListener, <span class="string">"Title of the picture"</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">loadPicture(context,</span><br><span class="line">        <span class="string">"http://ribot.co.uk/images/sexyjoe.jpg"</span>,</span><br><span class="line">        mImageViewProfilePicture,</span><br><span class="line">        clickListener,</span><br><span class="line">        <span class="string">"Title of the picture"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-16-RxJava-chains-styling" class="article-heading"><a href="#2-2-16-RxJava-chains-styling" class="headerlink" title="2.2.16 RxJava chains styling"></a>2.2.16 RxJava chains styling<a class="article-anchor" href="#2-2-16-RxJava-chains-styling" aria-hidden="true"></a></h3><p>Rx chains of operators require line-wrapping. Every operator must go in a new line and the line should be broken before the <code>.</code></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Observable&lt;Location&gt; <span class="title">syncLocations</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> mDatabaseHelper.getAllLocations()</span><br><span class="line">            .concatMap(<span class="keyword">new</span> Func1&lt;Location, Observable&lt;? extends Location&gt;&gt;() &#123;</span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                 <span class="keyword">public</span> Observable&lt;? extends Location&gt; call(Location location) &#123;</span><br><span class="line">                     <span class="keyword">return</span> mRetrofitService.getLocation(location.id);</span><br><span class="line">                 &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">            .retry(<span class="keyword">new</span> Func2&lt;Integer, Throwable, Boolean&gt;() &#123;</span><br><span class="line">                 <span class="meta">@Override</span></span><br><span class="line">                 <span class="function"><span class="keyword">public</span> Boolean <span class="title">call</span><span class="params">(Integer numRetries, Throwable throwable)</span> </span>&#123;</span><br><span class="line">                     <span class="keyword">return</span> throwable <span class="keyword">instanceof</span> RetrofitError;</span><br><span class="line">                 &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-3-XML-style-rules" class="article-heading"><a href="#2-3-XML-style-rules" class="headerlink" title="2.3 XML style rules"></a>2.3 XML style rules<a class="article-anchor" href="#2-3-XML-style-rules" aria-hidden="true"></a></h2><h3 id="2-3-1-Use-self-closing-tags" class="article-heading"><a href="#2-3-1-Use-self-closing-tags" class="headerlink" title="2.3.1 Use self closing tags"></a>2.3.1 Use self closing tags<a class="article-anchor" href="#2-3-1-Use-self-closing-tags" aria-hidden="true"></a></h3><p>When an XML element doesn’t have any contents, you <strong>must</strong> use self closing tags.</p>
+<p>This is good:</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">	<span class="attr">android:id</span>=<span class="string">"@+id/text_view_profile"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>This is <strong>bad</strong> :</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Don\'t do this! --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:id</span>=<span class="string">"@+id/text_view_profile"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> &gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">TextView</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-3-2-Resources-naming" class="article-heading"><a href="#2-3-2-Resources-naming" class="headerlink" title="2.3.2 Resources naming"></a>2.3.2 Resources naming<a class="article-anchor" href="#2-3-2-Resources-naming" aria-hidden="true"></a></h3><p>Resource IDs and names are written in <strong>lowercase_underscore</strong>.</p>
+<h4 id="2-3-2-1-ID-naming" class="article-heading"><a href="#2-3-2-1-ID-naming" class="headerlink" title="2.3.2.1 ID naming"></a>2.3.2.1 ID naming<a class="article-anchor" href="#2-3-2-1-ID-naming" aria-hidden="true"></a></h4><p>IDs should be prefixed with the name of the element in lowercase underscore. For example:</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Prefix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TextView</code></td>
+<td><code>text_</code></td>
+</tr>
+<tr>
+<td><code>ImageView</code></td>
+<td><code>image_</code></td>
+</tr>
+<tr>
+<td><code>Button</code></td>
+<td><code>button_</code></td>
+</tr>
+<tr>
+<td><code>Menu</code></td>
+<td><code>menu_</code></td>
+</tr>
+</tbody>
+</table>
+<p>Image view example:</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ImageView</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:id</span>=<span class="string">"@+id/image_profile"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Menu example:</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">menu</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">item</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/menu_done"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:title</span>=<span class="string">"Done"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">menu</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-3-2-2-Strings" class="article-heading"><a href="#2-3-2-2-Strings" class="headerlink" title="2.3.2.2 Strings"></a>2.3.2.2 Strings<a class="article-anchor" href="#2-3-2-2-Strings" aria-hidden="true"></a></h4><p>String names start with a prefix that identifies the section they belong to. For example <code>registration_email_hint</code> or <code>registration_name_hint</code>. If a string <strong>doesn’t belong</strong> to any section, then you should follow the rules below:</p>
+<table>
+<thead>
+<tr>
+<th>Prefix</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>error_</code></td>
+<td>An error message</td>
+</tr>
+<tr>
+<td><code>msg_</code></td>
+<td>A regular information message</td>
+</tr>
+<tr>
+<td><code>title_</code></td>
+<td>A title, i.e. a dialog title</td>
+</tr>
+<tr>
+<td><code>action_</code></td>
+<td>An action such as “Save” or “Create”</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2-3-2-3-Styles-and-Themes" class="article-heading"><a href="#2-3-2-3-Styles-and-Themes" class="headerlink" title="2.3.2.3 Styles and Themes"></a>2.3.2.3 Styles and Themes<a class="article-anchor" href="#2-3-2-3-Styles-and-Themes" aria-hidden="true"></a></h4><p>Unlike the rest of resources, style names are written in <strong>UpperCamelCase</strong>.</p>
+<h3 id="2-3-3-Attributes-ordering" class="article-heading"><a href="#2-3-3-Attributes-ordering" class="headerlink" title="2.3.3 Attributes ordering"></a>2.3.3 Attributes ordering<a class="article-anchor" href="#2-3-3-Attributes-ordering" aria-hidden="true"></a></h3><p>As a general rule you should try to group similar attributes together. A good way of ordering the most common attributes is:</p>
+<ol>
+<li>View Id</li>
+<li>Style</li>
+<li>Layout width and layout height</li>
+<li>Other layout attributes, sorted alphabetically</li>
+<li>Remaining attributes, sorted alphabetically</li>
+</ol>
+<h2 id="2-4-Tests-style-rules" class="article-heading"><a href="#2-4-Tests-style-rules" class="headerlink" title="2.4 Tests style rules"></a>2.4 Tests style rules<a class="article-anchor" href="#2-4-Tests-style-rules" aria-hidden="true"></a></h2><h3 id="2-4-1-Unit-tests" class="article-heading"><a href="#2-4-1-Unit-tests" class="headerlink" title="2.4.1 Unit tests"></a>2.4.1 Unit tests<a class="article-anchor" href="#2-4-1-Unit-tests" aria-hidden="true"></a></h3><p>Test classes should match the name of the class the tests are targeting, followed by <code>Test</code>. For example, if we create a test class that contains tests for the <code>DatabaseHelper</code>, we should name it <code>DatabaseHelperTest</code>.</p>
+<p>Test methods are annotated with <code>@Test</code> and should generally start with the name of the method that is being tested, followed by a precondition and/or expected behaviour.</p>
+<ul>
+<li>Template: <code>@Test void methodNamePreconditionExpectedBehaviour()</code></li>
+<li>Example: <code>@Test void signInWithEmptyEmailFails()</code></li>
+</ul>
+<p>Precondition and/or expected behaviour may not always be required if the test is clear enough without them.</p>
+<p>Sometimes a class may contain a large amount of methods, that at the same time require several tests for each method. In this case, it’s recommendable to split up the test class into multiple ones. For example, if the <code>DataManager</code> contains a lot of methods we may want to divide it into <code>DataManagerSignInTest</code>, <code>DataManagerLoadUsersTest</code>, etc. Generally you will be able to see what tests belong together because they have common <a href="https://en.wikipedia.org/wiki/Test_fixture" target="_blank" rel="noopener">test fixtures</a>.</p>
+<h3 id="2-4-2-Espresso-tests" class="article-heading"><a href="#2-4-2-Espresso-tests" class="headerlink" title="2.4.2 Espresso tests"></a>2.4.2 Espresso tests<a class="article-anchor" href="#2-4-2-Espresso-tests" aria-hidden="true"></a></h3><p>Every Espresso test class usually targets an Activity, therefore the name should match the name of the targeted Activity followed by <code>Test</code>, e.g. <code>SignInActivityTest</code></p>
+<p>When using the Espresso API it is a common practice to place chained methods in new lines.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">onView(withId(R.id.view))</span><br><span class="line">        .perform(scrollTo())</span><br><span class="line">        .check(matches(isDisplayed()))</span><br></pre></td></tr></table></figure>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2018-02-08T06:56:49.511Z" itemprop="dateModified">上次更新：2018-02-08</time>
+                <a href="index.html" class="article-footer-prev" title="概述"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="android_architecture.html" class="article-footer-next" title="Android Architecture"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+             
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-Project-guidelines"><span class="toc-text">1. Project guidelines</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-Project-structure"><span class="toc-text">1.1 Project structure</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-File-naming"><span class="toc-text">1.2 File naming</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-Class-files"><span class="toc-text">1.2.1 Class files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-2-Resources-files"><span class="toc-text">1.2.2 Resources files</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-2-1-Drawable-files"><span class="toc-text">1.2.2.1 Drawable files</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-2-2-Layout-files"><span class="toc-text">1.2.2.2 Layout files</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-2-3-Menu-files"><span class="toc-text">1.2.2.3 Menu files</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-2-4-Values-files"><span class="toc-text">1.2.2.4 Values files</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-Code-guidelines"><span class="toc-text">2 Code guidelines</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-Java-language-rules"><span class="toc-text">2.1 Java language rules</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-Don’t-ignore-exceptions"><span class="toc-text">2.1.1 Don’t ignore exceptions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-Don’t-catch-generic-exception"><span class="toc-text">2.1.2 Don’t catch generic exception</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3-Don’t-use-finalizers"><span class="toc-text">2.1.3 Don’t use finalizers</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-4-Fully-qualify-imports"><span class="toc-text">2.1.4 Fully qualify imports</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-Java-style-rules"><span class="toc-text">2.2 Java style rules</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-Fields-definition-and-naming"><span class="toc-text">2.2.1 Fields definition and naming</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-3-Treat-acronyms-as-words"><span class="toc-text">2.2.3 Treat acronyms as words</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-4-Use-spaces-for-indentation"><span class="toc-text">2.2.4 Use spaces for indentation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-5-Use-standard-brace-style"><span class="toc-text">2.2.5 Use standard brace style</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-6-Annotations"><span class="toc-text">2.2.6 Annotations</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-6-1-Annotations-practices"><span class="toc-text">2.2.6.1 Annotations practices</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-6-2-Annotations-style"><span class="toc-text">2.2.6.2 Annotations style</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-7-Limit-variable-scope"><span class="toc-text">2.2.7 Limit variable scope</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-8-Order-import-statements"><span class="toc-text">2.2.8 Order import statements</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-9-Logging-guidelines"><span class="toc-text">2.2.9 Logging guidelines</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-10-Class-member-ordering"><span class="toc-text">2.2.10 Class member ordering</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-11-Parameter-ordering-in-methods"><span class="toc-text">2.2.11 Parameter ordering in methods</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-13-String-constants-naming-and-values"><span class="toc-text">2.2.13 String constants, naming, and values</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-14-Arguments-in-Fragments-and-Activities"><span class="toc-text">2.2.14 Arguments in Fragments and Activities</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-15-Line-length-limit"><span class="toc-text">2.2.15 Line length limit</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-15-1-Line-wrapping-strategies"><span class="toc-text">2.2.15.1 Line-wrapping strategies</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-16-RxJava-chains-styling"><span class="toc-text">2.2.16 RxJava chains styling</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-XML-style-rules"><span class="toc-text">2.3 XML style rules</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-1-Use-self-closing-tags"><span class="toc-text">2.3.1 Use self closing tags</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-2-Resources-naming"><span class="toc-text">2.3.2 Resources naming</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-2-1-ID-naming"><span class="toc-text">2.3.2.1 ID naming</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-2-2-Strings"><span class="toc-text">2.3.2.2 Strings</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-2-3-Styles-and-Themes"><span class="toc-text">2.3.2.3 Styles and Themes</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-3-Attributes-ordering"><span class="toc-text">2.3.3 Attributes ordering</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-Tests-style-rules"><span class="toc-text">2.4 Tests style rules</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-1-Unit-tests"><span class="toc-text">2.4.1 Unit tests</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-2-Espresso-tests"><span class="toc-text">2.4.2 Espresso tests</span></a></li></ol></li></ol></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">交互规范</strong><a href="index.html" class="sidebar-link">概述</a><strong class="sidebar-title">编码规范</strong><a href="java-guide.html" class="sidebar-link current">Java Style Guide</a><a href="android_architecture.html" class="sidebar-link">Android Architecture</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2018 <a href="https://github.com/hexojs/hexo/graphs/contributors" target="_blank">Hexo</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/zh-cn/ios/" class="mobile-nav-link">iOS</a><a href="/zh-cn/android/" class="mobile-nav-link">Android</a><a href="/zh-cn/web/" class="mobile-nav-link">Web前端</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">交互规范</strong><a href="index.html" class="mobile-nav-link">概述</a><strong class="mobile-nav-title">编码规范</strong><a href="java-guide.html" class="mobile-nav-link current">Java Style Guide</a><a href="android_architecture.html" class="mobile-nav-link">Android Architecture</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="android/java-guide.html">
+      
+        <option value="en">English</option>
+      
+        <option value="zh-tw">正體中文</option>
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+        <option value="ru">Русский</option>
+      
+        <option value="ko">한국어</option>
+      
+        <option value="pt-br">Português (Brasil)</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'null',
+  indexName: 'null',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>
