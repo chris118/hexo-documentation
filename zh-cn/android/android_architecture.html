@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>putao | 葡萄用户端</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://pomelo.tech/zh-cn/android/android_architecture.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="http://pomelo.tech/android/android_architecture.html">
+    
+      <link rel="alternative" hreflang="zh-tw" href="http://pomelo.tech/zh-tw/android/android_architecture.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="http://pomelo.tech/zh-cn/android/android_architecture.html">
+    
+      <link rel="alternative" hreflang="ru" href="http://pomelo.tech/ru/android/android_architecture.html">
+    
+      <link rel="alternative" hreflang="ko" href="http://pomelo.tech/ko/android/android_architecture.html">
+    
+      <link rel="alternative" hreflang="pt-br" href="http://pomelo.tech/pt-br/android/android_architecture.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <meta name="generator" content="Hexo 3.5.0">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="putao | 葡萄用户端">
+  <!-- Open Graph -->
+  <meta name="description" content="Architecture GuidelinesThe architecture of our Android apps is based on the MVP (Model View Presenter) pattern.  View (UI layer): this is where Activities, Fragments and other standard Android compone">
+<meta property="og:type" content="website">
+<meta property="og:title" content="putao | 葡萄用户端">
+<meta property="og:url" content="http://pomelo.tech/zh-cn/android/android_architecture.html">
+<meta property="og:site_name" content="putao | 葡萄用户端">
+<meta property="og:description" content="Architecture GuidelinesThe architecture of our Android apps is based on the MVP (Model View Presenter) pattern.  View (UI layer): this is where Activities, Fragments and other standard Android compone">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="http://pomelo.tech/zh-cn/android/android_architecture/architecture_diagram.png">
+<meta property="og:updated_time" content="2018-02-08T07:01:00.988Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="putao | 葡萄用户端">
+<meta name="twitter:description" content="Architecture GuidelinesThe architecture of our Android apps is based on the MVP (Model View Presenter) pattern.  View (UI layer): this is where Activities, Fragments and other standard Android compone">
+<meta name="twitter:image" content="http://pomelo.tech/zh-cn/android/android_architecture/architecture_diagram.png">
+  <!-- Google Analytics -->
+  
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/zh-cn/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/zh-cn/ios/" class="main-nav-link">iOS</a><a href="/zh-cn/android/" class="main-nav-link">Android</a><a href="/zh-cn/web/" class="main-nav-link">Web前端</a>
+<!--       <a href="https://github.com/" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div> -->
+    </nav>
+<!--     <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="android/android_architecture.html">
+        
+          <option value="en">English</option>
+        
+          <option value="zh-tw">正體中文</option>
+        
+          <option value="zh-cn" selected>简体中文</option>
+        
+          <option value="ru">Русский</option>
+        
+          <option value="ko">한국어</option>
+        
+          <option value="pt-br">Português (Brasil)</option>
+        
+      </select>
+    </div> -->
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name"></h1>
+                <a href="https://github.com/hexojs/site/edit/master/source/zh-cn/android/android_architecture.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h1 id="Architecture-Guidelines" class="article-heading"><a href="#Architecture-Guidelines" class="headerlink" title="Architecture Guidelines"></a>Architecture Guidelines<a class="article-anchor" href="#Architecture-Guidelines" aria-hidden="true"></a></h1><p>The architecture of our Android apps is based on the <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter" target="_blank" rel="noopener">MVP</a> (Model View Presenter) pattern.</p>
+<ul>
+<li><p><strong>View (UI layer)</strong>: this is where Activities, Fragments and other standard Android components live. It’s responsible for displaying the data received from the presenters to the user. It also handles user interactions and inputs (click listeners, etc) and triggers the right action in the Presenter if needed.</p>
+</li>
+<li><p><strong>Presenter</strong>: presenters subscribe to RxJava Observables provided by the <code>DataManager</code>. They are in charge of handling the subscription lifecycle, analysing/modifying the data returned by the <code>DataManager</code> and calling the appropriate methods in the View in order to display the data.</p>
+</li>
+<li><p><strong>Model (Data Layer)</strong>: this is responsible for retrieving, saving, caching and massaging data. It can communicate with local databases and other data stores as well as with restful APIs or third party SDKs. It is divided in two parts: a group of helpers and a <code>DataManager</code>. The number of helpers vary between project and each of them has a very specific function, e.g. talking to an API or saving data in <code>SharedPreferences</code>. The <code>DataManager</code> combines and transforms the outputs from different helpers using Rx operators so it can: 1) provide meaningful data to the Presenter,  2) group actions that will always happen together. This layer also contains the actual model classes that define how the data structure is.</p>
+</li>
+</ul>
+<p><img src="/zh-cn/android/android_architecture/architecture_diagram.png" alt="android_architecture"></p>
+<p>Looking at the diagram from right to left:</p>
+<ul>
+<li><p><strong>Helpers (Model)</strong>: A set of classes, each of them with a very specific responsibility. Their function can range from talking to APIs or a database to implementing some specific business logic. Every project will have different helpers but the most common ones are:</p>
+<ul>
+<li><strong>DatabaseHelper</strong>: It handles inserting, updating and retrieving data from a local SQLite database. Its methods return Rx Observables that emit plain java objects (models)</li>
+<li><strong>PreferencesHelper</strong>: It saves and gets data from <code>SharedPreferences</code>, it can return Observables or plain java objects directly.</li>
+<li><strong>Retrofit services</strong> : <a href="http://square.github.io/retrofit" target="_blank" rel="noopener">Retrofit</a> interfaces that talk to Restful APIs, each different API will have its own Retrofit service. They return Rx Observables.</li>
+</ul>
+</li>
+<li><p><strong>Data Manager (Model)</strong>: It’s a key part of the architecture. It keeps a reference to every helper class and uses them to satisfy the requests coming from the presenters. Its methods make extensive use of Rx operators to combine, transform or filter the output coming from the helpers in order to generate the desired output ready for the Presenters. It returns observables that emit data models.</p>
+</li>
+<li><p><strong>Presenters</strong>: Subscribe to observables provided by the <code>DataManager</code> and process the data in order to call the right method in the View.</p>
+</li>
+<li><p><strong>Activities, Fragments, ViewGroups (View)</strong>: Standard Android components that implement a set of methods that the Presenters can call. They also handle user interactions such as clicks and act accordingly by calling the appropriate method in the Presenter. These components also implement framework-related tasks such us managing the Android lifecycle, inflating views, etc.</p>
+</li>
+<li><p><strong>Event Bus</strong>: It allows the View components to be notified of certain types of events that happen in the Model. Generally the  <code>DataManager</code> posts events which can then be subscribed to by Activities and Fragments. The event bus is <strong>only used for very specific actions</strong> that are not related to only one screen and have a broadcasting nature, e.g. the user has signed out.</p>
+</li>
+</ul>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2018-02-08T07:01:00.988Z" itemprop="dateModified">上次更新：2018-02-08</time>
+                <a href="java-guide.html" class="article-footer-prev" title="Java Style Guide"><i class="fa fa-chevron-left"></i><span>上一页</span></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+             
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Architecture-Guidelines"><span class="toc-text">Architecture Guidelines</span></a></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">交互规范</strong><a href="index.html" class="sidebar-link">概述</a><strong class="sidebar-title">编码规范</strong><a href="java-guide.html" class="sidebar-link">Java Style Guide</a><a href="android_architecture.html" class="sidebar-link current">Android Architecture</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2018 <a href="https://github.com/hexojs/hexo/graphs/contributors" target="_blank">Hexo</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/zh-cn/ios/" class="mobile-nav-link">iOS</a><a href="/zh-cn/android/" class="mobile-nav-link">Android</a><a href="/zh-cn/web/" class="mobile-nav-link">Web前端</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">交互规范</strong><a href="index.html" class="mobile-nav-link">概述</a><strong class="mobile-nav-title">编码规范</strong><a href="java-guide.html" class="mobile-nav-link">Java Style Guide</a><a href="android_architecture.html" class="mobile-nav-link current">Android Architecture</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="android/android_architecture.html">
+      
+        <option value="en">English</option>
+      
+        <option value="zh-tw">正體中文</option>
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+        <option value="ru">Русский</option>
+      
+        <option value="ko">한국어</option>
+      
+        <option value="pt-br">Português (Brasil)</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'null',
+  indexName: 'null',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>
