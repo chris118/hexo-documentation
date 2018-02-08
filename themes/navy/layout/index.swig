@@ -2,7 +2,7 @@
   <div class="inner">
     <h2 id="banner-title">{{ page.subtitle }}</h2>
     <div id="banner-start">
-      <a id="banner-start-link" href="iOS/"><i class="fa fa-arrow-right"></i></a>
+      <a id="banner-start-link" href="ios/"><i class="fa fa-arrow-right"></i></a>
     </div>
   </div>
 </header>
@@ -20,7 +20,7 @@
         <li class="intro-cmd-item">md: ./source/zh-cn/xx/</li>
       </ul>
       <div id="intro-get-started-wrap">
-        <a href="iOS/" id="intro-get-started-link">{{ __('index.get_started') }}</a>
+        <a href="ios/" id="intro-get-started-link">{{ __('index.get_started') }}</a>
       </div>
     </div>
   </div>
