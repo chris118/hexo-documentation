@@ -114,14 +114,14 @@
   </url>
   
   <url>
-    <loc>http://pomelo.tech/pt-br/docs/variables.html</loc>
+    <loc>http://pomelo.tech/pt-br/docs/troubleshooting.html</loc>
     
     <lastmod>2018-02-07T03:10:12.713Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://pomelo.tech/pt-br/docs/troubleshooting.html</loc>
+    <loc>http://pomelo.tech/pt-br/docs/variables.html</loc>
     
     <lastmod>2018-02-07T03:10:12.713Z</lastmod>
     
@@ -205,14 +205,14 @@
   </url>
   
   <url>
-    <loc>http://pomelo.tech/pt-br/docs/generating.html</loc>
+    <loc>http://pomelo.tech/pt-br/docs/front-matter.html</loc>
     
     <lastmod>2018-02-07T03:10:12.710Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://pomelo.tech/pt-br/docs/front-matter.html</loc>
+    <loc>http://pomelo.tech/pt-br/docs/generating.html</loc>
     
     <lastmod>2018-02-07T03:10:12.710Z</lastmod>
     
@@ -268,7 +268,7 @@
   </url>
   
   <url>
-    <loc>http://pomelo.tech/pt-br/api/scaffolds.html</loc>
+    <loc>http://pomelo.tech/pt-br/api/tag.html</loc>
     
     <lastmod>2018-02-07T03:10:12.708Z</lastmod>
     
@@ -282,7 +282,7 @@
   </url>
   
   <url>
-    <loc>http://pomelo.tech/pt-br/api/tag.html</loc>
+    <loc>http://pomelo.tech/pt-br/api/scaffolds.html</loc>
     
     <lastmod>2018-02-07T03:10:12.708Z</lastmod>
     
@@ -303,13 +303,6 @@
   </url>
   
   <url>
-    <loc>http://pomelo.tech/pt-br/api/migrator.html</loc>
-    
-    <lastmod>2018-02-07T03:10:12.707Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://pomelo.tech/pt-br/api/posts.html</loc>
     
     <lastmod>2018-02-07T03:10:12.707Z</lastmod>
@@ -317,7 +310,7 @@
   </url>
   
   <url>
-    <loc>http://pomelo.tech/pt-br/api/locals.html</loc>
+    <loc>http://pomelo.tech/pt-br/api/migrator.html</loc>
     
     <lastmod>2018-02-07T03:10:12.707Z</lastmod>
     
@@ -331,16 +324,16 @@
   </url>
   
   <url>
-    <loc>http://pomelo.tech/pt-br/api/processor.html</loc>
+    <loc>http://pomelo.tech/pt-br/api/locals.html</loc>
     
     <lastmod>2018-02-07T03:10:12.707Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://pomelo.tech/pt-br/api/helper.html</loc>
+    <loc>http://pomelo.tech/pt-br/api/processor.html</loc>
     
-    <lastmod>2018-02-07T03:10:12.706Z</lastmod>
+    <lastmod>2018-02-07T03:10:12.707Z</lastmod>
     
   </url>
   
@@ -353,6 +346,13 @@
   
   <url>
     <loc>http://pomelo.tech/pt-br/api/filter.html</loc>
+    
+    <lastmod>2018-02-07T03:10:12.706Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://pomelo.tech/pt-br/api/helper.html</loc>
     
     <lastmod>2018-02-07T03:10:12.706Z</lastmod>
     
@@ -373,14 +373,14 @@
   </url>
   
   <url>
-    <loc>http://pomelo.tech/pt-br/api/box.html</loc>
+    <loc>http://pomelo.tech/pt-br/api/console.html</loc>
     
     <lastmod>2018-02-07T03:10:12.705Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://pomelo.tech/pt-br/api/console.html</loc>
+    <loc>http://pomelo.tech/pt-br/api/box.html</loc>
     
     <lastmod>2018-02-07T03:10:12.705Z</lastmod>
     
