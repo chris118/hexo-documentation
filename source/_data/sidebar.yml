@@ -1,15 +1,18 @@
 web:
-  getting_started:
+  ui_guide:
     overview: index.html
-  basic_usage:
-    writing: writing.html
+  code_guide:
+    javascript-guide: javascript-guide.html
 ios:
   ui_guide:
     button: index.html
+    tableview: tableview.html
   code_guide:
-    writing: writing.html
+    swift_guide: swift-guide.html
+    ios-good-practices: ios-good-practices.html
 android:
-  getting_started:
+  ui_guide:
     overview: index.html
-  basic_usage:
-    writing: writing.html
+  code_guide:
+    java-guide: java-guide.html
+    android_architecture: android_architecture.html

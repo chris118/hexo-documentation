@@ -20,17 +20,20 @@ page:
 
 sidebar:
   web:
+    ui_guide: 交互规范
+    code_guide: 编码规范
     overview: 概述
-    getting_started: 开始使用
-    basic_usage: 基本操作
-    writing: 写作
+    javascript-guide: Javascript Guide
   ios:
     ui_guide: 交互规范
     code_guide: 编码规范
     button: 按钮
-    writing: 写作
+    tableview: 表视图
+    swift_guide: Swift Style Guide
+    ios-good-practices: iOS Good Practices
   android:
+    ui_guide: 交互规范
+    code_guide: 编码规范
     overview: 概述
-    getting_started: 开始使用
-    basic_usage: 基本操作
-    writing: 写作
+    java-guide: Java Style Guide
+    android_architecture: Android Architecture
