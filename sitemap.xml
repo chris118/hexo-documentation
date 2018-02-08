@@ -114,14 +114,14 @@
   </url>
   
   <url>
-    <loc>http://pomelo.tech/pt-br/docs/troubleshooting.html</loc>
+    <loc>http://pomelo.tech/pt-br/docs/variables.html</loc>
     
     <lastmod>2018-02-07T03:10:12.713Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://pomelo.tech/pt-br/docs/variables.html</loc>
+    <loc>http://pomelo.tech/pt-br/docs/troubleshooting.html</loc>
     
     <lastmod>2018-02-07T03:10:12.713Z</lastmod>
     
@@ -205,13 +205,6 @@
   </url>
   
   <url>
-    <loc>http://pomelo.tech/pt-br/docs/front-matter.html</loc>
-    
-    <lastmod>2018-02-07T03:10:12.710Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://pomelo.tech/pt-br/docs/generating.html</loc>
     
     <lastmod>2018-02-07T03:10:12.710Z</lastmod>
@@ -219,7 +212,7 @@
   </url>
   
   <url>
-    <loc>http://pomelo.tech/pt-br/docs/data-files.html</loc>
+    <loc>http://pomelo.tech/pt-br/docs/front-matter.html</loc>
     
     <lastmod>2018-02-07T03:10:12.710Z</lastmod>
     
@@ -227,6 +220,13 @@
   
   <url>
     <loc>http://pomelo.tech/pt-br/docs/deployment.html</loc>
+    
+    <lastmod>2018-02-07T03:10:12.710Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://pomelo.tech/pt-br/docs/data-files.html</loc>
     
     <lastmod>2018-02-07T03:10:12.710Z</lastmod>
     
@@ -247,14 +247,14 @@
   </url>
   
   <url>
-    <loc>http://pomelo.tech/pt-br/docs/asset-folders.html</loc>
+    <loc>http://pomelo.tech/pt-br/docs/commands.html</loc>
     
     <lastmod>2018-02-07T03:10:12.709Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://pomelo.tech/pt-br/docs/commands.html</loc>
+    <loc>http://pomelo.tech/pt-br/docs/asset-folders.html</loc>
     
     <lastmod>2018-02-07T03:10:12.709Z</lastmod>
     
@@ -282,14 +282,14 @@
   </url>
   
   <url>
-    <loc>http://pomelo.tech/pt-br/api/scaffolds.html</loc>
+    <loc>http://pomelo.tech/pt-br/api/rendering.html</loc>
     
     <lastmod>2018-02-07T03:10:12.708Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://pomelo.tech/pt-br/api/rendering.html</loc>
+    <loc>http://pomelo.tech/pt-br/api/scaffolds.html</loc>
     
     <lastmod>2018-02-07T03:10:12.708Z</lastmod>
     
@@ -317,14 +317,14 @@
   </url>
   
   <url>
-    <loc>http://pomelo.tech/pt-br/api/index.html</loc>
+    <loc>http://pomelo.tech/pt-br/api/locals.html</loc>
     
     <lastmod>2018-02-07T03:10:12.707Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://pomelo.tech/pt-br/api/locals.html</loc>
+    <loc>http://pomelo.tech/pt-br/api/index.html</loc>
     
     <lastmod>2018-02-07T03:10:12.707Z</lastmod>
     
@@ -334,6 +334,13 @@
     <loc>http://pomelo.tech/pt-br/api/processor.html</loc>
     
     <lastmod>2018-02-07T03:10:12.707Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://pomelo.tech/pt-br/api/helper.html</loc>
+    
+    <lastmod>2018-02-07T03:10:12.706Z</lastmod>
     
   </url>
   
@@ -352,7 +359,7 @@
   </url>
   
   <url>
-    <loc>http://pomelo.tech/pt-br/api/helper.html</loc>
+    <loc>http://pomelo.tech/pt-br/api/deployer.html</loc>
     
     <lastmod>2018-02-07T03:10:12.706Z</lastmod>
     
@@ -360,13 +367,6 @@
   
   <url>
     <loc>http://pomelo.tech/pt-br/api/events.html</loc>
-    
-    <lastmod>2018-02-07T03:10:12.706Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://pomelo.tech/pt-br/api/deployer.html</loc>
     
     <lastmod>2018-02-07T03:10:12.706Z</lastmod>
     
@@ -415,14 +415,14 @@
   </url>
   
   <url>
-    <loc>http://pomelo.tech/news/2015/03/05/hexo-3-0-released/</loc>
+    <loc>http://pomelo.tech/news/2015/02/27/new-documentation-and-registry/</loc>
     
     <lastmod>2018-02-07T03:10:12.678Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://pomelo.tech/news/2015/02/27/new-documentation-and-registry/</loc>
+    <loc>http://pomelo.tech/news/2015/03/05/hexo-3-0-released/</loc>
     
     <lastmod>2018-02-07T03:10:12.678Z</lastmod>
     
